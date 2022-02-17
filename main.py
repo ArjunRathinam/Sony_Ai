@@ -93,10 +93,6 @@ if __name__ == "__main__":
             talk("opening python.org")
             webbrowser.open("python.org")
 
-        elif 'who are my best friends' in query:
-            talk("Sir , your best friends are Shreyas,Advick,Taizen and myself!")
-            print("Sir , your best friends are Shreyas,Advick,Taizen and myself!")
-
         elif 'thanks buddy' in query:
             talk("You're most welcome sir !")
             print("You're most welcome sir !")
@@ -119,10 +115,7 @@ if __name__ == "__main__":
         elif 'open github' in query:
             talk("opening github sir")
             webbrowser.open("github.com")
-        elif 'open my codingal website' in query:
-            talk("opening your site sir")
-            webbrowser.open("https://arjunrathinam.github.io/The-seven-continents-of-the-world-/")
-
+    
         elif 'when is your birthday jarvis' in query:
             talk("sir! my birthday falls on 3rd january")
             print("sir! my birthday falls on 3rd january")
