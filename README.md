@@ -9,7 +9,8 @@ search summary in google<br>
 see the weather of your city<br>
 text to speech usage Sapi5<br>
 pyaudio usage<br>
-search wikipedia and set remainders too
+search wikipedia and set remainders too<br>
+play games too
 
 <h1>Requirments:</h1>
 Pyaudio,
