@@ -1,3 +1,6 @@
+
+
+
 # Sony_Ai
 An personalized Ai assistant made using python programmed with emotions it understands our mood. 
 
@@ -9,13 +12,13 @@ pyaudio usage<br>
 search wikipedia and set remainders too
 
 <h1>Requirments:</h1>
-Pyaudio<br>
-Pyttsx3<br>
-Wikipedia<br>
-Webroswer<br>
-datetime<br>
-random<br>
-speech_recognition<br>
-bs4<br>
+Pyaudio,
+Pyttsx3,
+Wikipedia,
+Webroswer,
+datetime,
+random,
+speech_recognition,
+bs4 and
 requests
 
