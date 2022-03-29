@@ -7,6 +7,11 @@ import random
 import pyttsx3
 import datetime
 
+# Ai intents
+
+welcome_dta = ['hello', 'hey', 'hi', 'hi there']
+welcome_dta = set(welcome_dta)
+
 info_data = ["arjun is the creator of me , he is currently in college, he loves programming and has a great depth of "
              "knowledge in it."]
 
@@ -66,7 +71,7 @@ if __name__ == "__main__":
         if 'wikipedia' in query:
             speak('Searching Wikipedia...')
             query = query.replace("wikipedia", "")
-            results = wikipedia.summary(query, sentences=2)
+            results = wikipedia.summary(query, sentences=3)
             speak("According to Wikipedia")
             print(results)
             speak(results)
@@ -176,17 +181,21 @@ if __name__ == "__main__":
         elif 'help me in maths' in query:
             speak("opening calculator sir...")
 
+
             # addition
             def addition(n1, n2):
                 return n1 + n2
+
 
             # subraction
             def subraction(n1, n2):
                 return n1 - n2
 
+
             # division
             def division(n1, n2):
                 return n1 / n2
+
 
             # multiplication
             def multiplication(n1, n2):
@@ -208,7 +217,7 @@ if __name__ == "__main__":
             answer = function(number_1, number_2)
             print(f"{number_1} {user_operation_selection} {number_2} = {answer} ")
 
-        elif 'find weather' in query:
+        elif 'find the weather' in query:
             city = input("type the city name: ")
             # Generating the url
             url = "https://google.com/search?q=weather+in+" + city
@@ -221,6 +230,13 @@ if __name__ == "__main__":
             # The temperature is stored inside the class "BNeawe".
             temp = soup.find("div", class_='BNeawe').text
             print(f' the temperature in {city} is {temp}')
+
+            speak(f'sir let me tell a fact that i found about the city {city}')
+            srch = city.replace("wikipedia", "")
+            srch_rch = wikipedia.summary(srch, sentences=2)
+            speak("According to Wikipedia")
+            print(srch_rch)
+            speak(srch_rch)
 
         elif 'start engine' in query:
             speak('sure sir, starting search engine...')
@@ -242,3 +258,22 @@ if __name__ == "__main__":
             for info in heading_object:
                 print(info.getText())
                 print("------")
+
+        elif 'take summary' in query:
+            speak('sure sir, starting google')
+
+            go_srch = input("what do you want to search for: ")
+            srch_url = 'https://google.com/search?q=' + go_srch
+
+            result_req = requests.get(srch_url)
+
+            req_soup = bs4.BeautifulSoup(result_req.text,'html.parser')
+            summary_obj = req_soup.find_all('body')
+            for info in summary_obj:
+                print(info.getText())
+                print("---------")
+
+        elif query in welcome_dta:
+            speak('Hi sir, how may i help you')
+
+
